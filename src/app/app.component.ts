@@ -9,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 	title = 'app';
-	estado = true;
+	estado = false;
 	personas = [ 'Alejandro', 'Carlos', 'Miguel' ];
 	tajetaCredito = 1111222233334444;
 	name = 'Alejandro';
