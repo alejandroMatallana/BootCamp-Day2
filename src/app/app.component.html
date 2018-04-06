@@ -1,20 +1,95 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://github.com/angular/angular-cli/wiki">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- The content below is only a placeholder and can be replaced.-->
 
+<h1>
+    Welcome to {{ title }}!
+</h1>
+
+<div *ngIf="estado">Hola como estan</div>
+
+<div>
+
+    <ul>
+        <li *ngFor="let personas of personas">
+            {{personas}}
+
+        </li>
+
+    </ul>
+</div>
+
+<span [ngSwitch]="estado">
+  <p *ngSwitchCase="true">
+      Este pasa cuando es verdadero
+  
+  </p>
+  <p *ngSwitchCase="false">
+      Este pasa cuando es falso
+  </p>
+  <p *ngSwitchDefault>
+  
+  </p>
+  </span>
+
+<p appMyColorStyle>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptatibus assumenda fugit aliquam ipsum delectus quis, quam libero vel quaerat, nesciunt voluptatem, perferendis tenetur illo! Officia voluptate at numquam consequatur perferendis!</p>
+<p appMyColorStyle>Quae iste rerum quisquam sapiente neque modi, atque reiciendis aspernatur nesciunt perferendis odit eaque fugit iure officiis est nihil quasi dolore vero, itaque cumque nobis. Voluptatibus obcaecati accusamus illum totam!</p>
+<p>Eveniet dolorum nemo nihil velit inventore et. Autem, totam architecto? Maxime, minima ex omnis, neque, temporibus fuga repudiandae autem fugiat iusto quas esse optio libero deleniti eligendi quisquam magni accusantium.</p>
+<p>Modi laborum nemo suscipit tempore delectus est autem officiis, enim laboriosam rem ex incidunt ducimus corporis mollitia consequuntur optio ab quas consectetur magni sint eveniet iure rerum expedita dignissimos. Iste.</p>
+<p>Sunt necessitatibus tempora, laboriosam autem quaerat doloribus. Eum fugiat ducimus nam accusamus deserunt iusto ab eos eaque magnam illum minus quasi animi eius, molestias dolor doloremque sunt! Quia, incidunt maiores.</p>
+
+{{tajetaCredito}}
+
+<h1>{{name}}</h1>
+
+<input type="text"
+       [value]="name"
+       (keydown.enter)="name=$event.target.value">
+
+<button>Cambiar</button>
+
+
+<!-- 
+<div>
+    <ul>
+        <li>user id</li>
+        <li>id</li>
+        <li>title</li>
+        <li>body</li>
+    </ul>
+    <ul *ngFor="let p of posts">
+        <li>{{p.userId}}</li>
+        <li>{{p.id}}</li>
+        <li>{{p.title}}</li>
+        <li>{{p.body}}</li>
+        <button (click)="eliminar(p)">eliminar</button>
+
+    </ul>
+</div>
+-->
+
+<h1>{{listadoJson}}</h1>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <td>userId</td>
+            <td>id</td>
+            <td>title</td>
+            <td>body</td>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let p of posts">
+            <td>{{p.userId}}</td>
+            <td>{{p.id}}</td>
+            <td>{{p.title}}</td>
+            <td>{{p.body}}</td>
+            <td> <button (click)="eliminar(p)">eliminar</button></td>
+        </tr>
+    </tbody>
+
+
+</table>
+
+<div class="alert alert-primary" role="alert">
+  This is a primary alert—check it out!
+</div>
